@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebAR — Задание 1: model-viewer</title>
+
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js">
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    header {
+      padding: 16px;
+      text-align: center;
+      background: #1a1a1a;
+      border-bottom: 1px solid #333;
+    }
+    header h1 { margin: 0 0 4px; font-size: 1.25rem; }
+    header p  { margin: 0; font-size: 0.85rem; color: #aaa; }
+
+    model-viewer {
+      width: 100%;
+      height: calc(100vh - 80px);
+      background: #222;
+      --poster-color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Задание 1. WebAR с &lt;model-viewer&gt;</h1>
+    <p>Наведите камеру телефона на ровную поверхность и нажмите AR</p>
+  </header>
+
+  <model-viewer
+    id="mv"
+    src="models/freddy_fazbear_oh_oh_oh.glb"
+    alt="3D-модель медведя"
+
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+
+    camera-controls
+    auto-rotate
+    autoplay
+
+    shadow-intensity="1"
+    exposure="1"
+    environment-image="hdr/forest-street.hdr"
+
+    touch-action="pan-y">
+  </model-viewer>
+
+</body>
+</html>
